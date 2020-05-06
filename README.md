@@ -1,6 +1,6 @@
 # ReSi
 Reaktive Sicherheit 
 
-|Blatt| Punkte|
-|:----|-------|
-| 1 | 16 |
+|Blatt| Punkte|Möglich|
+|:----|-------|-------|
+| 1 | 16 | 20|
