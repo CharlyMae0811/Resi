@@ -1,6 +1,6 @@
 # ReSi
 Reaktive Sicherheit 
 
-|Blatt| Punkte|
-|:----|-------|
-| 1 | 16 |
+|Blatt| Punkte|Möglich|Total (erzielt)|Total (Möglich)|Prozent|
+|:----|-------|-------|-------|-------|-------|
+| 1 | 16 | 20|16|20|80%|
