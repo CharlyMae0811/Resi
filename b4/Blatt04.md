@@ -1,7 +1,7 @@
 # Blatt 4
 
 ## Aufgabe 1  
-### 1
+### (1)
 ```
 returnValue fctName(arg1,... ,argN)  	
 			returnValue	: Datentyp der Rückgabe  
@@ -17,7 +17,7 @@ int funk(int x, char y)
 
 Source: http://www.lab4inf.fh-muenster.de/lab4inf/docs/Prog-in-C/04-Funktionen.pdf Folie 5  
 
-### 2
+### (2)
 ```
 int main(){
 			int (*fptr) (int, char);
@@ -26,9 +26,9 @@ int main(){
 		}
 ```
 
-### 3
+### (3)
 
-### 4
+### (4)
 
 ## Aufgabe 2
 	
