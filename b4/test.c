@@ -1,0 +1,19 @@
+unsigned char maschinen_code_als_string[] = 
+"\xb8\x01\x00\x00\x00" 
+"\xbf\x01\x00\x00\x00" 
+"\x48\xbe\x48\x61\x6c\x6c\x6f\x20\x44\x75" 
+"\x56"
+"\x54"
+"\x5e" 
+"\xba\x08\x00\x00\x00" 
+"\x0f\x05" 
+"\xbf\x00\x00\x00\x00"
+"\xb8\x3c\x00\x00\x00" 
+"\x0f\x05";
+
+int main() {
+void (*maschinen_code_als_funk)();
+maschinen_code_als_funk = (void(*)())maschinen_code_als_string; 
+maschinen_code_als_funk ();
+return 0;
+}
