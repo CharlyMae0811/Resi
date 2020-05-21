@@ -90,8 +90,8 @@ und um es wieder zu enablen mit echo 2.
 
 Zeile 5: unsigned long long (also 64 Bit) deklaration von drei variablen (rip, rbp, rsp)
 
-Zeile 6: asm zeigt an dass es inline-assembler code ist, wobei der assembler code der erste string ist. also "lea (%%rip),%% rax". Lea bedeutet load effective adresse, also wird die effektive Addresse der Speicherstelle die von rip referenzeirt wird (erkennbar an den Kllamern) in den zweiten operanden (rax) geschrieben. 
-: "=r" (rip ) ist ein Parameter der asm übergeben wird (erkennbar an den :). Dies ist für die Outputoperation zuständig, also wird das ergebnis in dem in Zeile 5 definierten rip abgelegt werden soll (also das was zurvor in rax stand). 
+Zeile 6: asm zeigt an dass es inline-assembler code ist, wobei der assembler code der erste string ist.  also "lea (%%rip),%% rax". Lea bedeutet load effective adresse, also wird die effektive Addresse der Speicherstelle die von rip referenzeirt wird (erkennbar an den Klamern) in den zweiten operanden (rax) geschrieben.
+ "=r" (rip ) ist ein Parameter der asm übergeben wird (erkennbar an den :). Dies ist für die Outputoperation zuständig, also wird das ergebnis in dem in Zeile 5 definierten rip abgelegt werden soll (also das was zurvor in rax stand). 
 =r sagt hierbei dass nur schreibend auf ein Beliebiges Genereal Purpose Register zugegriffen werden soll.
 Effektiv wird also in die in Zeile 5 definierte Variable rip die Adresse reingeschrieben auf die das Register rip zeigt. 
 
@@ -106,4 +106,5 @@ jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann ma
 "gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
 Victim mit "run" ausführen
 "p &buf" (adresse von buf auslesen)
+ls
 
