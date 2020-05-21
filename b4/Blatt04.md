@@ -55,6 +55,7 @@ b:  be 48 61 6c 6c          mov    esi,0x6c6c6148
 28: 0f 05                   syscall
 ```
 Es wird eine Maschinencode Varaible "maschinencode_als_funk" erstellt (Typ: Funktionspointer auf Funktion die keine Paramter enthält, keine Ausgabe liefert). Danach wird die getypecastet und mit dem Wert von "maschinencode_als_string" initialisiert. Dann wird der code auf den "maschinencode_als_funk" zeigt ohne parameter ausgeführt. Es sorgt dafür dass die Adresse auf die rsp zeigt ausgegeben wird.  
+
 ## Aufgabe 2
 	
 gets() schreibt ALLES was sie bekommt in den übergebenen Buffer, auch darüber hinaus, wenn die Eingabe größer ist als der Buffer. Hier liegt der Buffer im Speicher vor den drei Funktionen. Heißt man kann diese überschreiben, indem man den buf[32] voll spammt, wobei der erste Buchstabe ein "J" sein muss, damit die Funktion auch ausgeführt wird! "Jdhdhdhdhdhdhdhdhdhdhdhdhdhdhdhd" Füllt buf[32] komplett. Nun muss man noch die ersten beiden Funktionen so überschreiben, dass sie nicht ausgeführt werden. Da man selber entscheidet welche Funktion ausgeführt wird ist es man einfachsten die erste zu nehmen und dort die Adresse der Funktion 3  hinein zu schreiben. Oder 0x0000 0000 FF10 bis 0x0000 0000 FF20 mit "0" zu überschrieben. (?)
@@ -106,5 +107,8 @@ jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann ma
 "gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
 Victim mit "run" ausführen
 "p &buf" (adresse von buf auslesen)
-ls
-``
+
+```
+
+
+
