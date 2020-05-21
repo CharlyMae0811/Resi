@@ -31,7 +31,23 @@ mov rdi, 0
 mov rax, 60
 syscall
 
+Ausgabe objdump:
+
 ### (4)
+Zeilen 2-12:
+0:  b8 01 00 00 00          mov    eax,0x1
+5:  bf 01 00 00 00          mov    edi,0x1
+a:  48                      dec    eax
+b:  be 48 61 6c 6c          mov    esi,0x6c6c6148
+10: 6f                      outs   dx,DWORD PTR ds:[esi]
+11: 20 44 75 56             and    BYTE PTR [ebp+esi*2+0x56],al
+15: 54                      push   esp
+16: 5e                      pop    esi
+17: ba 08 00 00 00          mov    edx,0x8
+1c: 0f 05                   syscall
+1e: bf 00 00 00 00          mov    edi,0x0
+23: b8 3c 00 00 00          mov    eax,0x3c
+28: 0f 05                   syscall
 
 ## Aufgabe 2
 	
