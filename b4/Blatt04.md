@@ -101,10 +101,10 @@ Zeile 9-12: Hier werden dann die Adressen ausgegeben.
 Diese Programm gibt also die Adressen von den Speicherzellen aus die zu dem Zeitpunkt von den Registern rip, rbp und rsp referenziert werden. 
 
 ### (3)
-jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann man gbd nutzen:
+jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann man gbd nutzen:  
 ```
 "gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
 Victim mit "run" ausführen
 "p &buf" (adresse von buf auslesen)
 ls
-
+``
