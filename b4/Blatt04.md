@@ -64,7 +64,9 @@ und um es wieder zu enablen mit echo 2.
 
 ### (2)
 1 #include <stdio.h>
+
 2 #include <stdint.h>
+
 3
 4 int main () {
 5 uint64_t rip , rbp , rsp;					
