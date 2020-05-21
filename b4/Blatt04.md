@@ -18,6 +18,7 @@ int funk(int x, char y)
 Source: http://www.lab4inf.fh-muenster.de/lab4inf/docs/Prog-in-C/04-Funktionen.pdf Folie 5  
 
 ### (2)
+Der Typ ist ein Funktionspointer auf eine Funktion, die einen int und einen char bekommt.
 ```
 int main(){
 			int (*fptr) (int, char);
@@ -31,7 +32,7 @@ mov rdi, 0
 mov rax, 60
 syscall
 
-Ausgabe objdump:
+Ausgabe objdump: Dateiformat der Eingabe (also tunix: Dateiformat elf64-x86-64). Dann wird mitgeiteilt das das Ergebniss vom "Disassembler" ausgegeben wird, woraufhin gesagt wird auf welche Adresse sich der erste Befehl (start) befindet. Dann wird in einer Tabelle (3 Spalten) die Adresse, der Maschinencode und das Disassemblierte Ergebnis von diesem Code ausgegeben. 
 
 ### (4)
 Zeilen 2-12:
@@ -61,16 +62,28 @@ Um ASLR abzuschaltung führt man also folgenden Befehl aus:
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 und um es wieder zu enablen mit echo 2.
 
-### (2) (change layout because fuck...)
+### (2)
 1 #include <stdio.h>
 2 #include <stdint.h>
 3
 4 int main () {
-5 uint64_t rip , rbp , rsp;					unsigned long long declaration
-6 asm ("lea (%% rip ),%% rax" : "=r" (rip ));			In 64-bit mode you can exploit the RIP-relative addressing, so LEA RAX,	7 asm ("lea (%% rbp ),%% rax" : "=r" (rbp ));			[RIP] will give you the address of itself in EAX
+5 uint64_t rip , rbp , rsp;					
+6 asm ("lea (%% rip ),%% rax" : "=r" (rip ));			
+7 asm ("lea (%% rbp ),%% rax" : "=r" (rbp ));			
 8 asm ("lea (%% rsp ),%% rax" : "=r" (rsp ));
-9 printf("rip: %p\n", rip );					Printing of Addresses
+9 printf("rip: %p\n", rip );				
 10 printf("rbp: %p\n", rbp );
 11 printf("rsp: %p\n", rsp );
 12 return 0;
 13 }
+
+Zeile 5: unsigned long long (also 64 Bit) deklaration von drei variablen (rip, rbp, rsp)
+Zeile 6: asm zeigt an dass es inline-assembler code ist, wobei der assembler code der erste string ist. also "lea (%%rip),%% rax". Lea bedeutet load effective adresse, also wird die effektive Addresse der Speicherstelle die von rip referenzeirt wird (erkennbar an den Kllamern) in den zweiten operanden (rax) geschrieben. 
+: "=r" (rip ) ist ein Parameter der asm übergeben wird (erkennbar an den :). Dies ist für die Outputoperation zuständig, also wird das ergebnis in dem in Zeile 5 definierten rip abgelegt werden soll (also das was zurvor in rax stand). 
+=r sagt hierbei dass nur schreibend auf ein Beliebiges Genereal Purpose Register zugegriffen werden soll.
+Effektiv wird also in die in Zeile 5 definierte Variable rip die Adresse reingeschrieben auf die das Register rip zeigt. 
+
+Zeile 7-8: analog für rbp und rsp
+Zeile 9-12: Hier werden dann die Adressen ausgegeben.
+
+Diese Programm gibt also die Adressen von den Speicherzellen aus die zu dem Zeitpunkt von den Registern rip, rbp und rsp referenziert werden. 
