@@ -45,7 +45,7 @@ Um ASLR abzuschaltung führt man also folgenden Befehl aus:
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 und um es wieder zu enablen mit echo 2.
 
-### (2)
+### (2) (change layout because fuck...)
 1 #include <stdio.h>
 2 #include <stdint.h>
 3
