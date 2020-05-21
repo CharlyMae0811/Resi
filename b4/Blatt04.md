@@ -28,17 +28,17 @@ int main(){
 ```
 
 ### (3)
-``
+```
 mov rdi, 0
 mov rax, 60
 syscall
 
-``
+```
 
 Ausgabe objdump: Dateiformat der Eingabe (also tunix: Dateiformat elf64-x86-64). Dann wird mitgeiteilt das das Ergebniss vom "Disassembler" ausgegeben wird, woraufhin gesagt wird auf welche Adresse sich der erste Befehl (start) befindet. Dann wird in einer Tabelle (3 Spalten) die Adresse, der Maschinencode und das Disassemblierte Ergebnis von diesem Code ausgegeben. 
 
 ### (4)
-``
+```
 Zeilen 2-12:
 0:  b8 01 00 00 00          mov    eax,0x1
 5:  bf 01 00 00 00          mov    edi,0x1
@@ -53,7 +53,7 @@ b:  be 48 61 6c 6c          mov    esi,0x6c6c6148
 1e: bf 00 00 00 00          mov    edi,0x0
 23: b8 3c 00 00 00          mov    eax,0x3c
 28: 0f 05                   syscall
-``
+```
 ## Aufgabe 2
 	
 gets() schreibt ALLES was sie bekommt in den übergebenen Buffer, auch darüber hinaus, wenn die Eingabe größer ist als der Buffer. Hier liegt der Buffer im Speicher vor den drei Funktionen. Heißt man kann diese überschreiben, indem man den buf[32] voll spammt, wobei der erste Buchstabe ein "J" sein muss, damit die Funktion auch ausgeführt wird! "Jdhdhdhdhdhdhdhdhdhdhdhdhdhdhdhd" Füllt buf[32] komplett. Nun muss man noch die ersten beiden Funktionen so überschreiben, dass sie nicht ausgeführt werden. Da man selber entscheidet welche Funktion ausgeführt wird ist es man einfachsten die erste zu nehmen und dort die Adresse der Funktion 3  hinein zu schreiben. Oder 0x0000 0000 FF10 bis 0x0000 0000 FF20 mit "0" zu überschrieben. (?)
@@ -70,7 +70,7 @@ echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 und um es wieder zu enablen mit echo 2.
 
 ### (2)
-``
+```
 1 #include <stdio.h> 
 2 #include <stdint.h>
 3
@@ -85,7 +85,7 @@ und um es wieder zu enablen mit echo 2.
 12 return 0;
 13 }
 
-``
+```
 
 Zeile 5: unsigned long long (also 64 Bit) deklaration von drei variablen (rip, rbp, rsp)
 
@@ -101,7 +101,7 @@ Diese Programm gibt also die Adressen von den Speicherzellen aus die zu dem Zeit
 
 ### (3)
 jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann man gbd nutzen:
-``
+```
 "gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
 Victim mit "run" ausführen
 "p &buf" (adresse von buf auslesen)
