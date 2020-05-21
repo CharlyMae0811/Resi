@@ -63,7 +63,7 @@ echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 und um es wieder zu enablen mit echo 2.
 
 ### (2)
-1 #include <stdio.h>
+1 #include <stdio.h> \\
 2 #include <stdint.h>
 3
 4 int main () {
@@ -87,3 +87,9 @@ Zeile 7-8: analog für rbp und rsp
 Zeile 9-12: Hier werden dann die Adressen ausgegeben.
 
 Diese Programm gibt also die Adressen von den Speicherzellen aus die zu dem Zeitpunkt von den Registern rip, rbp und rsp referenziert werden. 
+
+### (3)
+jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann man gbd nutzen:
+"gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
+Victim mit "run" ausführen
+"p &buf" (adresse von buf auslesen)
