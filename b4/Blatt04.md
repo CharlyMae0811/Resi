@@ -57,27 +57,43 @@ gets() schreibt ALLES was sie bekommt in den übergebenen Buffer, auch darüber 
 ## Aufgabe 4
 ### (1)
 ASLR steht für Address Space Layout Randomization. Wie der nahme schon sagt, sorgt es dafür dass die Adressen für Programme zufällig zugewiesen werden und nicht mehr vorhersehbar sind. Dies soll Angriffe über Bufferoverflow erschweren. (Es gibt natürlich Angriffstechniken die diesen Schutz umgehen).
+
 Eine temporäre Abschaltung lässt sich durch das Interface /proc/sys/kernel/randomize_va_space erreichen. Hier bei ist 0 keine randomizierung, 1 eine teilweise randomizierung (Shared libraries, stack, heap) und 2 eine volle randomizeirung. 
 Um ASLR abzuschaltung führt man also folgenden Befehl aus:
+
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+
 und um es wieder zu enablen mit echo 2.
 
 ### (2)
-1 #include <stdio.h> \\
+1 #include <stdio.h> 
+
 2 #include <stdint.h>
+
 3
+
 4 int main () {
-5 uint64_t rip , rbp , rsp;					
-6 asm ("lea (%% rip ),%% rax" : "=r" (rip ));			
-7 asm ("lea (%% rbp ),%% rax" : "=r" (rbp ));			
+
+5 uint64_t rip , rbp , rsp;
+
+6 asm ("lea (%% rip ),%% rax" : "=r" (rip ));	
+
+7 asm ("lea (%% rbp ),%% rax" : "=r" (rbp ));
+
 8 asm ("lea (%% rsp ),%% rax" : "=r" (rsp ));
-9 printf("rip: %p\n", rip );				
+
+9 printf("rip: %p\n", rip );	
+
 10 printf("rbp: %p\n", rbp );
+
 11 printf("rsp: %p\n", rsp );
+
 12 return 0;
+
 13 }
 
 Zeile 5: unsigned long long (also 64 Bit) deklaration von drei variablen (rip, rbp, rsp)
+
 Zeile 6: asm zeigt an dass es inline-assembler code ist, wobei der assembler code der erste string ist. also "lea (%%rip),%% rax". Lea bedeutet load effective adresse, also wird die effektive Addresse der Speicherstelle die von rip referenzeirt wird (erkennbar an den Kllamern) in den zweiten operanden (rax) geschrieben. 
 : "=r" (rip ) ist ein Parameter der asm übergeben wird (erkennbar an den :). Dies ist für die Outputoperation zuständig, also wird das ergebnis in dem in Zeile 5 definierten rip abgelegt werden soll (also das was zurvor in rax stand). 
 =r sagt hierbei dass nur schreibend auf ein Beliebiges Genereal Purpose Register zugegriffen werden soll.
@@ -90,6 +106,9 @@ Diese Programm gibt also die Adressen von den Speicherzellen aus die zu dem Zeit
 
 ### (3)
 jmpto muss den Wert der Adresse von buf enthalten. Um diese rauszufinden kann man gbd nutzen:
+
 "gdb --args victim test" (Einmal victim "debuggen" mit belibiger Eingabe)
+
 Victim mit "run" ausführen
+
 "p &buf" (adresse von buf auslesen)
