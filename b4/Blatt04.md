@@ -46,4 +46,15 @@ echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 und um es wieder zu enablen mit echo 2.
 
 ### (2)
-
+1 #include <stdio.h>
+2 #include <stdint.h>
+3
+4 int main () {
+5 uint64_t rip , rbp , rsp;					unsigned long long declaration
+6 asm ("lea (%% rip ),%% rax" : "=r" (rip ));			In 64-bit mode you can exploit the RIP-relative addressing, so LEA RAX,	7 asm ("lea (%% rbp ),%% rax" : "=r" (rbp ));			[RIP] will give you the address of itself in EAX
+8 asm ("lea (%% rsp ),%% rax" : "=r" (rsp ));
+9 printf("rip: %p\n", rip );					Printing of Addresses
+10 printf("rbp: %p\n", rbp );
+11 printf("rsp: %p\n", rsp );
+12 return 0;
+13 }
