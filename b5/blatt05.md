@@ -15,20 +15,20 @@
 ## Aufgabe 2
 	
 	(1) Signatur von printf: int printf(const char *format,...)  
-	"..." heißt man kann endlich viele Variablen übergeben welche im format string entsprechend des Datentyps "aufgerufen" werden müssen.
+	"..." heißt man kann endlich viele Variablen übergeben welche im format string entsprechend  
+	des Datentyps "aufgerufen" werden müssen.
 
 	(2) al: Anzahl floating point Parameter  in Vektor Register  
 		__m256 & __m512 Variablenargumente auf den Stack  
 
-	(3) Ein Formatstring enthält informatien wie viele Parameter der Funktion auf dem Stack übergeben wurden und deren Datentypen
+	(3) Ein Formatstring enthält informatien wie viele Parameter der  
+	Funktion auf dem Stack übergeben wurden und deren Datentypen
 
 	(4) 
 
 	(5) ./main "%x %x %x"
 
 	(6) als erstes wird 1 in den stack geschrieben, dann die adresse von i, dann wird prinf ausgeführt 
-
-## Aufgabe 3
 
 
 ## Aufgabe 4
