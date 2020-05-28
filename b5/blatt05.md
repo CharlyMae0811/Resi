@@ -12,6 +12,7 @@
 	(2)wenn das Bit gesetzt ist  bei einem Program, werden zusätzlich zu den Rechten des Benutzers, der die Datei ausführt, auch die Rechten des Benutzers mit ausgeführt, dem die Datei gehört ("owner"). Der Zweck ist es unprivilegierten Benutzern  und Prozessen einen kontrollierten Zugriff auf privilegierte Ressourcen zu ermöglichen
 
 (3) chmod
+
 Chmod u+s "Datei" 
 
  
@@ -19,8 +20,10 @@ Chmod u+s "Datei"
 (5)Ein symlink (symbokic Link) beschreibt eine Verknüpfung in einem Dateisystem, die eine Referenz zu einer anderen Datei oder Verzeichnis aufweist. Bei löschen oder verschieben dieser ist im Normalfall die Referenz dann "ins leere". Die Referenz ist nicht gleichwertig zum eigentlichen Dateisystem-Eintrag . 
 
 Man kann sie mit 
+
 ln -s /Zieldatei /Referenz
 Erstellen
+
 
 
 ## Aufgabe 2
