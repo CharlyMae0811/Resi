@@ -10,7 +10,10 @@ output: pdf_file
 ---
 
 # Aufgabe 1
-  (1)In PHP gibt es die Funktion eval(), die benutzt wird um ein String zu evaluieren. Ein Angreifer würde jetzt teile oder den ganzen String maniuplieren um den String zu kontrollieren. Zum Beispiel:
+  (1)Dynamic Evolution Verwundbarkeit: der Angreifer kontrolliert eine Zeichenkette, die als PHP-Script-Code
+interpretiert wird.
+
+  In PHP gibt es die Funktion eval(), die benutzt wird um ein String zu evaluieren. Ein Angreifer würde jetzt teile oder den ganzen String maniuplieren um den String zu kontrollieren. Zum Beispiel:
   
 ```
   <?php
@@ -24,7 +27,7 @@ output: pdf_file
   
   (2) Das Schutzziel der Verfügbarkeit (Möchliches Löschen von Daten), der Vertraulichkeit (Sichten von sensiblen Daten) und der Integrität (Datenmanipulation) werden verletzt.
   
-  (3) 
+  (3) Flask ist ein lightweight web application framework. Es bietet vorschläge aber keine festgelegten Abhängigkeiten oder layouts. Der Nutzer kann sich die gewünschten libraries und Werkzeuge aussuchen.  
   
   (4)
   
