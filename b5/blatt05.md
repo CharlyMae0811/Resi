@@ -2,14 +2,14 @@
 
 ## Aufgabe 1
 
-	(1) Bei dem TOC-to-TOU-Problem handelt es sich um ein Multithreadingproblem.  
-	Process 1 check ob eine Condition wahr ist (TOC), ist sie wahr bzw. erfüllt oder gegeben,  
-	versucht er mit dieser Condition zu arbeiten (TOU). Unterbricht ein anderer Process nun genau  
-	nach dem Check der als wahr gewertet wurde und vor dem Benutzen, kann er den von Prozess 1 benötigeten  
-	Ressourcen verwenden oder aufbrauchen, wodurch wenn Prozess 1 wieder weiter macht, ausgehend von dem  
-	Korrekten Check, kann der Prozess abstürzen.  
+(1) Bei dem TOC-to-TOU-Problem handelt es sich um ein Multithreadingproblem.  
+Process 1 check ob eine Condition wahr ist (TOC), ist sie wahr bzw. erfüllt oder gegeben,  
+versucht er mit dieser Condition zu arbeiten (TOU). Unterbricht ein anderer Process nun genau  
+nach dem Check der als wahr gewertet wurde und vor dem Benutzen, kann er den von Prozess 1 benötigeten  
+Ressourcen verwenden oder aufbrauchen, wodurch wenn Prozess 1 wieder weiter macht, ausgehend von dem  
+Korrekten Check, kann der Prozess abstürzen.  
 
-	(2)wenn das Bit gesetzt ist  bei einem Program, werden zusätzlich zu den Rechten des Benutzers, der die Datei ausführt, auch die Rechten des Benutzers mit ausgeführt, dem die Datei gehört ("owner"). Der Zweck ist es unprivilegierten Benutzern  und Prozessen einen kontrollierten Zugriff auf privilegierte Ressourcen zu ermöglichen
+(2)wenn das Bit gesetzt ist  bei einem Program, werden zusätzlich zu den Rechten des Benutzers, der die Datei ausführt, auch die Rechten des Benutzers mit ausgeführt, dem die Datei gehört ("owner"). Der Zweck ist es unprivilegierten Benutzern  und Prozessen einen kontrollierten Zugriff auf privilegierte Ressourcen zu ermöglichen
 
 (3) chmod
 
