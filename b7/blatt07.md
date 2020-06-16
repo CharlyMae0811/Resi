@@ -9,7 +9,6 @@ lang: de
 output: pdf_file
 ---
 
-1.5 fehlt, 5.1 nicht vollständig, rest von 5 fehlt
 
 # Aufgabe 2
 (1) Path Traversal Verwundbarkeit (auch Directory Traversal gennent) ist eine Sicherheitslücke in einem Webserver/einer Webanwendung, wobei unerlaubterweise auf Dateien/Verzeichnisse zugegriffen wird, durch Eingabe von URLs . Normalerweise kann man nicht auf Dateien eines Webservers außerhalb des Web-Verzeichnisses oder dessen Unterverzeichnisse zugreiffen. Bei dem Angriff wird durch eine manipulierte Pfadangabe aber auf Dateien außerhalb dieser Verzeichnisse zuzugreifen. Dies wird meist duch Angeb von ../ bewirkt, da man sich damit im Verzeichnis eine Ebene nach oben bewegt. mit / wäre es gleich zur Wurzel.
@@ -18,9 +17,9 @@ output: pdf_file
 
 (3) Man soll, falls es Vorhanden ist, ein Katzenfoto runter laden können. Falls kein Foto vorhanden ist, soll dies auf einer weitergeleiteten Website stehen. 
 
-(4) Die passwd-Datei liegt in der selben Partion wie die webcat.py Datei. Deswegen kann die Path Traversal Verwundbarkeit ausgenutzt werden. In Unterschiedlichen Partitionen geht dies nicht. 
+(4) Die passwd-Datei liegt in der selben Partion wie die webcat.py Datei. Deswegen kann die Path Traversal Verwundbarkeit ausgenutzt werden. Wenn webcat und passwd in unterschiedlichen Partitionen sind geht dies nicht. 
 
-(5)
+(5)http://127.0.0.1:5000/?filename=.../.../.../etc/passwd lädt die psswd datei runter und nutzt dabei die Path Traversal Verwundbarkeit aus, dass man mit / eine Verzeichnisebene höher kann, in unserem Fall also drei mal springen. Dann ist man in dem Systemordner wo auch andere Ordner sind, wie etc. Jetzt lässt webcat den nutzer das Katzenfoto runterladen. 
 
 # Aufgabe 5
 (1) Hauptsächlich unterscheiden sich Programme und Prozesse darin, dass das Programm aus einer Gruppe von Anweisungen besteht, die eine bestimme Aufgabe ausführen sollen. Ein Prozess hingegen, ist ein bestimmtes Programm, das aktuell ausgeführt wird, also eine Instanz eines ausgeführten Programmes. Ein Programm kann also auch mehrere Prozesse aufrufen (1 zu n Beziehung). Ein Prozess wird deshalb als aktive Entität betrachtet, ein Programm jedoch als passiv. 
