@@ -23,13 +23,16 @@ output: pdf_file
 
 # Aufgabe 5
 (1) Hauptsächlich unterscheiden sich Programme und Prozesse darin, dass das Programm aus einer Gruppe von Anweisungen besteht, die eine bestimme Aufgabe ausführen sollen. Ein Prozess hingegen, ist ein bestimmtes Programm, das aktuell ausgeführt wird, also eine Instanz eines ausgeführten Programmes. Ein Programm kann also auch mehrere Prozesse aufrufen (1 zu n Beziehung). Ein Prozess wird deshalb als aktive Entität betrachtet, ein Programm jedoch als passiv. 
-Dadurch entscheiden sicha auch die Lebensdauern und benötigte Resourcen von einander: Ein Programm ist im Speicher bis es manuell gelöscht wird udn benötigt auch nur Speicherplatzt, ein Prozess wird nach Abschluss der Aufgabe beendet, benötigt zur Ausführung jedoch zum Teil Verarbeitungs-, Speicher- oder E/A-Resourcen. 
+Dadurch entscheiden sich auch die Lebensdauern und benötigte Resourcen von einander: Ein Programm ist im Speicher bis es manuell gelöscht wird und benötigt auch nur Speicherplatzt, ein Prozess wird nach Abschluss der Aufgabe beendet, benötigt zur Ausführung jedoch zum Teil Verarbeitungs-, Speicher- oder E/A-Resourcen. 
 
 Dateiformat x64-Linux-Programme: 
+	Executable and Linkable Format (ELF)
 
 Ersten vier Byte des Formats:
+	"0x7F 45 4C 46" ACSII für ELF
 
 Bytes des Headers:
+	ELF-Header: 64 byte
 
 (2)
 
