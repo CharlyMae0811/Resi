@@ -32,7 +32,7 @@ Ersten vier Byte des Formats:
 	"0x7F 45 4C 46" ACSII für ELF
 
 Bytes des Headers:
-	ELF-Header: 64 byte
+	ELF-Header: 64 byte, das 5te byte definiert das bit-format
 
-(2)
+(2) 
 
