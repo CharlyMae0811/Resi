@@ -13,18 +13,19 @@ output: pdf_file
 # Aufgabe 2
 ## (1) 
 Path Traversal Verwundbarkeit (auch Directory Traversal gennant) ist eine Sicherheitslücke in einem Webserver/einer Webanwendung, wobei unerlaubterweise auf Dateien/Verzeichnisse durch Eingabe von URLs zugegriffen wird. Normalerweise kann man nicht auf Dateien eines Webservers außerhalb des Web-Verzeichnisses oder dessen Unterverzeichnisse zugreiffen. Bei dem Angriff wird durch eine manipulierte Pfadangabe aber auf Dateien außerhalb dieser Verzeichnisse zugegriffen. Dies wird meist durch Angabe von `../` bewirkt, da man sich damit im Verzeichnis eine Ebene nach oben bewegt. Mit `/` wäre es direkt zur Wurzel.
+Ein Beispiel fürs entstehen der Verwundbarkeit ist wenn auf Dateien mits Variablen zugegriffen wird, die von der Nutzereingabe verändert werden und nicht ausreichend geprüft werden.
 
 ## (2) 
-Die Vertaulichkeit wird verlezt (eventuelles auslesen von vertraulichen Daten, Passwörter, etc.) 
+Die Vertaulichkeit wird direkt verlezt (eventuelles auslesen von vertraulichen Daten, Passwörter, etc.) 
 
 ## (3) 
-Falls vorhanden öffnet sich die cat.jpg, falls nicht öffnet sich die Seite mit dem Schriftzug: Cat not found
+Falls vorhanden öffnet sich die Datei cat.jpg, die vom Webserver bereit gestellt wird. Hierfür wird eine HTML-Seite gesendet, welche den Link wieder auf die Seite enthält und auch noch einen GET-parameter "filename" (enthält hier den Wert cat.jpg). Falls die Datei nicht vorhanden ist, öffnet sich die Seite mit dem Schriftzug: Cat not found
 
 ## (4) 
-Die passwd-Datei liegt in der selben Partion wie die webcat.py Datei. Deswegen kann die Path Traversal Verwundbarkeit ausgenutzt werden. Wenn webcat und passwd in unterschiedlichen Partitionen sind geht dies nicht. 
+Der GET-parameter wird nicht vor dem auswerten überprüft. So kann wie in 1) beschrieben auf andere Verzeichnisse zugegriffen werden. Hinzu kommt, dass die passwd-Datei in der selben Partion liegt wie die webcat.py Datei. Deswegen kann die Path Traversal Verwundbarkeit ausgenutzt werden. Wenn webcat und passwd in unterschiedlichen Partitionen sind geht dies nicht. 
 
 ## (5)
-`http://127.0.0.1:5000/?filename=/etc/passwd` lädt die psswd-Datei herunter. Es wird angenommen, dass sich dort das Bild befindet und als `return send_file(real_filename)` wird die passwd Datei zurückgegeben und gedownloadet. 
+`http://127.0.0.1:5000/?filename=.../.../.../etc/passwd` lädt die psswd-Datei herunter. Erst geht man zurück in die Wurzel des Dateiensystems und dann mit etc/passwd greift man auf die passwd Datei zu. Es wird angenommen, dass sich dort das Bild befindet und als `return send_file(real_filename)` wird die passwd Datei zurückgegeben und gedownloadet. 
 
 # Aufgabe 5
 ## (1) 
