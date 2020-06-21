@@ -11,9 +11,11 @@ output: pdf_file
 
 # Aufgabe 2
 
-(1) FakeNet:          simuliert ein Netzwerk wobei jeglicher Netzwerkverkehr an localhost weitergeleitet wird, wodurch keine Daten nach                       außen gehen können. So kann man Schadsoftware analysieren (Verhalten, etc.). 
+(1) 
 
-    RegShot:          (RegistryShot) ermöglicht es Snapshots von Registries zu machen. Dies ist nützlich um den genauen Ablauf/Verhalten                       von Schadsoftware weiter zu analysieren.
+	FakeNet:          simuliert ein Netzwerk wobei jeglicher Netzwerkverkehr an localhost weitergeleitet wird, wodurch keine Daten nach außen gehen können. So kann man Schadsoftware analysieren (Verhalten, etc.). 
+
+    RegShot:          (RegistryShot) ermöglicht es Snapshots von Registries zu machen. Dies ist nützlich um den genauen Ablauf/Verhalten von Schadsoftware weiter zu analysieren.
     
     Process Monitor:  zeichnet alle TCP/IP-Verbindungen auf, wie auch Lese- und Schreibzugriffe auf das Dateiensystem und Registry.
     
