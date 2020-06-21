@@ -1,6 +1,6 @@
 ---
 title: "Reaktive Sicherheit"
-subtitle: "Übungsblatt 7"
+subtitle: "Übungsblatt 8"
 author: 
 	- Balduin Binder [s6babind@uni-bonn.de]
 	- Charlotte Mädler [s6chmaed@uni-bonn.de]
