@@ -26,8 +26,17 @@ output: pdf_file
     YaraGUI:          ist eine Benutzeroberfläche zum  Malware identifizieren. 
     
     Wireshark:        stellt den Netzwerkverkehr da
-(4)
-(5)
+    
+(4)Regshot sagt, dass XXX Einträge geändert oder hinzugefügt wurden.
+XXX sind Schlüssel.
+XXX sind hinzugefügte Werte.
+XXX sind modifizierte Werte.
+Es werden weitere Programme installiert (Mr. OoPpSs, bpk).
+Es wird ein Windows Loginfenster geöffnet, wo man die Passwort Daten eingeben soll.
+Malicious durchsucht den Explorer-Verlauf.
+
+(5)Registry keys werden geändert und Mr. OoPpSs und bkp werden solange ausgeführt wie der Loginscreen über Test. Die VirtualBox wird erkannt, es werden Screenshots gemacht und gespeichert. Desktop.ini wird erstellt.
+CPU_auslastung wird gesteigert.
 
 # Aufgabe 4
 (1) Zur VM zurück kehren aus Aufgabe 2.
