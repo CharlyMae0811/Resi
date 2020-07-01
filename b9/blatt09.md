@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-
+Es fehlt: 1.3, 1.5,  teile der 1.6, komplette 3
 # Aufgabe 1
 
 (1) Eine Umgebungsvaraible sind dynamisch änderbare Werte, die beeinflussen  können wie ein Prozess ausgeführt wird. Hierbei sind sie ein Besatndteil der Umgebung in der der Prozess läuft. Sie beinhalten Pfade zu Programmen/Dateien wie auch ggf. Einstellungen für mehrere Programme.
@@ -48,13 +48,9 @@ Bei success, returned execve() nicht und returned -1 bei einem error.
 (5)
 
 (6)
-PATH ist die Systemvariable, die das Betriebssystem verwendet, um über die Befehlszeile oder das Terminalfenster nach erforderlichen ausführbaren Dateien zu suchen.
-Die Systemvariable PATH kann mit dem Systemutility in der Windows-Systemsteuerung oder in der Startdatei der Linux- oder Solaris-Shell eingerichtet werden.
-Änderungen an der Systemvariablen PATH sind in der Regel nicht erforderlich bei Rechnern, auf denen Windows oder Mac OS X ausgeführt wird.
-One of the most well-known is called PATH on Windows, Linux and Mac OS X. It specifies the directories in which executable programs* are located on the machine that can be started without knowing and typing the whole path to the file on the command line.On Linux and Mac OS X, it usually holds all bin and sbin directories relevant for the current user.
-specifying a set of directories where executable programs are located. In general, each executing process or user session has its own PATH setting.
- $PATH variable is specified as a list of one or more directory names separated by colon (:) characters
- Directories in the PATH-string are not meant to be escaped, making it impossible to have directories with : in their name. 
+PATH ist die Systemvariable, die das Betriebssystem verwendet, um über die Befehlszeile oder das Terminalfenster nach erforderlichen ausführbaren Dateien zu suchen. Man muss also nicht den geamten Path kennen/eingeben in der command line. In Linux und Mac OS X enthält PATH meist alle bin und sbin directories die für den akutellen nutzer relevant sind. Die varable wird als eine List spezifiziert, wobei die namen mit : getrennt werden. Generel, hat jeder ausgeführte Prozess oder nutzer session eine eigene PATH Einstellung. Sie kann mit dem Systemutility in der Windows-Systemsteuerung bzw. in der Startdatei der Linux-/Solaris-Shell eingerichtet werden. Bei Rechnerrn die auf Windows/Mac OS X laufen sind änderungen an PATH meist nicht erfoderlich.
+
+
  absolute (/home/userjoe/bin/script.sh) or relative path (./script.sh) 
  
  # Aufgabe 3
