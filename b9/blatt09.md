@@ -11,7 +11,7 @@ output: pdf_file
 
 # Aufgabe 1
 
-(1) Eine Umgebungsvaraible ist ein dynamsich gennanter Wert, der beeinflussen  kann wie ein Prozess ausgeführt wird. Hierbei sind sie ein Besatndteil der Umgebung in der der Prozess läuft. 
+(1) Eine Umgebungsvaraible sind dynamisch änderbare Werte, die beeinflussen  können wie ein Prozess ausgeführt wird. Hierbei sind sie ein Besatndteil der Umgebung in der der Prozess läuft. Sie beinhalten Pfade zu Programmen/Dateien wie auch ggf. Einstellungen für mehrere Programme.
 
 (2)Man kann die System.Environment class verwenden.
 
@@ -25,6 +25,14 @@ System.Environment.SetEnvironmentVariable(variable, value [, Target])
 ```
 können dies tun. Hier bei ist der Parameter Target (optional) Machine, Process, or User. Wenn Target weggelassen wird ist es per default der aktuelle Prozess.
 
+Alternativ kann man der main methode den char* envp[] übergeben und mittels while Schleife ausgeben.
+```
+int main (...,char* envp[]){
+int i=0;
+while(envp[i]!=NULL]{
+printf("[%s]", envp[i]);]}
+```
+
 (3)
 
 (4)
@@ -33,9 +41,9 @@ können dies tun. Hier bei ist der Parameter Target (optional) Machine, Process,
 int execve(const char *filename, char *const argv[], char *const envp[]);
 ```
 Execve() führt das Programm aus auf den der Pointer Filename zeigt (const char *filename).*
-argv ist ein array von argument strings die dem neues programm übermittelt werden (char *const argv[])* 
+argv ist ein array von argument strings die dem neues programm übermittelt werden (char *const argv[])* Per convention beginnt es mit dem Filenamen.
 envp ist ein array von strings die als Umgebung zum neuen Programm übermittelt werden (char *const envp[])* Im normal Fall haben sie die Form key=value.
-Bei success, execve() returned nicht, und returned -1 bei einem error. 
+Bei success, returned execve() nicht und returned -1 bei einem error. 
 
 (5)
 
