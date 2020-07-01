@@ -40,9 +40,9 @@ printf("[%s]", envp[i]);]}
 #include <unistd.h> 
 int execve(const char *filename, char *const argv[], char *const envp[]);
 ```
-Execve() führt das Programm aus auf den der Pointer Filename zeigt (const char *filename).*
-argv ist ein array von argument strings die dem neues programm übermittelt werden (char *const argv[])* Per convention beginnt es mit dem Filenamen.
-envp ist ein array von strings die als Umgebung zum neuen Programm übermittelt werden (char *const envp[])* Im normal Fall haben sie die Form key=value.
+Execve() führt das Programm aus auf den der Pointer Filename zeigt (const char* filename).
+argv ist ein array von argument strings die dem neues programm übermittelt werden (char* const argv[]) Per convention beginnt es mit dem Filenamen.
+envp ist ein array von strings die als Umgebung zum neuen Programm übermittelt werden (char* const envp[]) Im normal Fall haben sie die Form key=value.
 Bei success, returned execve() nicht und returned -1 bei einem error. 
 
 (5)
