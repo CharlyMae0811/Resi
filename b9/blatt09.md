@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-Es fehlt: 1.3 Ausgabe, 1.5,  teile der 1.6, komplette 3
+Es fehlt: 1.3 Ausgabe, 1.5, 1.6,  teile der 1.7, komplette 3
 # Aufgabe 1
 
 (1) Eine Umgebungsvaraible sind dynamisch änderbare Werte, die beeinflussen  können wie ein Prozess ausgeführt wird. Hierbei sind sie ein Besatndteil der Umgebung in der der Prozess läuft. Sie beinhalten Pfade zu Programmen/Dateien wie auch ggf. Einstellungen für mehrere Programme.
@@ -61,6 +61,8 @@ Bei success, returned execve() nicht und returned -1 bei einem error.
 (5)
 
 (6)
+
+(7)
 PATH ist die Systemvariable, die das Betriebssystem verwendet, um über die Befehlszeile oder das Terminalfenster nach erforderlichen ausführbaren Dateien zu suchen. Man muss also nicht den geamten Path kennen/eingeben in der command line. In Linux und Mac OS X enthält PATH meist alle bin und sbin directories die für den akutellen nutzer relevant sind. Die varable wird als eine List spezifiziert, wobei die namen mit : getrennt werden. Generel, hat jeder ausgeführte Prozess oder nutzer session eine eigene PATH Einstellung. Sie kann mit dem Systemutility in der Windows-Systemsteuerung bzw. in der Startdatei der Linux-/Solaris-Shell eingerichtet werden. Bei Rechnerrn die auf Windows/Mac OS X laufen sind änderungen an PATH meist nicht erfoderlich.
 
 
