@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-Es fehlt: 1.3, 1.5,  teile der 1.6, komplette 3
+Es fehlt: 1.3 Ausgabe, 1.5,  teile der 1.6, komplette 3
 # Aufgabe 1
 
 (1) Eine Umgebungsvaraible sind dynamisch änderbare Werte, die beeinflussen  können wie ein Prozess ausgeführt wird. Hierbei sind sie ein Besatndteil der Umgebung in der der Prozess läuft. Sie beinhalten Pfade zu Programmen/Dateien wie auch ggf. Einstellungen für mehrere Programme.
@@ -34,7 +34,19 @@ printf("[%s]", envp[i]);]}
 ```
 
 (3)
+```
+#include <stdio.h>
+#include <stdlib.h>
 
+int main(int argc, char* argv[], char *envp[]){
+	int i=0;
+	while(envp[i] != NULL){
+		printf("[%s]\n", envp[i]);
+		i++;
+	}
+}
+```
+Ausgabe:
 (4)
 ```
 #include <unistd.h> 
