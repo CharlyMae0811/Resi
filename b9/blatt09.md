@@ -50,6 +50,14 @@ int main(int argc, char* argv[], char *envp[]){
 }
 ```
 Ausgabe:
+```
+[DISPLAY=:1]                                                                                                                                                                       
+[LANG=en_US.UTF-8]                                                                                                                                                                 
+[DEBIAN_FRONTEND=noninteractive]                                                                                                                                                   
+[LC_ALL=en_US.UTF-8]                                                                                                                                                               
+[PWD=/home]   
+
+```
 
 # 1.4
 
