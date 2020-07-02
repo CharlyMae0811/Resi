@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-Es fehlt: 3.2 
+
 # Aufgabe 1
 
 # 1.1
@@ -133,4 +133,10 @@ static void destruct(void) __attribute__((destructor));
 
  (1) Eine verbreitungsmöglichkeit ist via Spammails. Der Bot verschickt maßenweise emails, wobei versucht wird den Empfänger dazu zu bringen das angehängt Programm asuzuführen, welches dann den Bot installiert. Hierbei wird im Betreff/in der e-Mail häufig vorgegeben sie sei von einem Freund, der Familie, Arbeitskollegen oder es hat mit aktuellen Anlässen wie Weihnachten zu tun. Dieses Prinzip heißt "Social Engeneering". Ursprünglich wurde Storm nur so verbreitet. Mittlerweise sind auch häufig links in den Emals die auf eine Seite führen, wo man dann die Malware runterlädt. 
  Eine zweite Methode ist es "exploits" also Schwachstellen vom Browser auszunutzen um so den Bot zu installieren. Wenn der Nutzer nicht von alleine auf den Downlaod Trick reinfällt wird ein sogennanter Drive-by download versucht.  Hierbei werden ätere Exploits benutzt in der Hoffnung dass wenigerer Erfahrene Benutzer, die ihre Betriebssysteme nicht regelmäßif aktualisieren den Bugfix noch nicht haben.
+ 
+ (2)Die Funktionen sind von den Benutzerrechten des angemeldeten Accounts abhängig. Ist ein Benutzer mit eingeschränkten Rechten angemeldet, ist der Funktionsumfang von
+Storm ebenfalls stark beschränkt.Die Datei spooldr.ini wird erzeugtyt. Sie enthält eine Liste von 200 bis 900 weiteren Storm-Peers, die per UDP kontaktiert werden. Nach einem Neustart des Rechners kommt es zu keiner weiteren Netzwerk-Kommunikation und der Storm-Bot ist durch Löschen der ecard.exe vom System beseitigt. Bei einem Administrator account wird erst eine Kopie in %Windir% (i. d. R. c:\windows) angelegt (nur bei der aler ersten ausführung). Danach wird die Systemzeit synchronisiert (für die korrekten Ausführung der Schlüsselsuche). Danach wird spooldr.exe auf die Liste von programmen gescrieben, von denen die Verbindungen nicht von der Windows-Firewall blockiert werden (Command:netsh firewall set allowed program "C:\WINDOWS\spooldr.exe" enable). Der Bot kann nun eingehende Verbindungen abhören oder selbst Daten zu versenden (UDP- und TCP-Ports). Amnschließend wird ein Kernel-Treiber, der zur Deaktivierung von Sicherheitssoftware dient in die Windows-Systemdatei tcpip.sys hinzugefügt. 
+Läuft eine zweite Ausführung ohne vorherigen Neustart kommt es nach 5–10 Minuten zu einem Abstürzen des Systems. Nach einem Neustart können die Rootkitfunktionalitäten genutzt werden. 
+
+Generell können die Funktionen wie folgt zusammen gefasst werden: Erkennung virtueller Maschinen, Sammlung von Daten, Rootkitfunktionalität. 
            
