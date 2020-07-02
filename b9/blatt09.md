@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-Es fehlt: 1.3 Ausgabe, 1.5, 1.6,  teile der 1.7, komplette 3
+Es fehlt: 3.2 
 # Aufgabe 1
 
 # 1.1
@@ -102,6 +102,32 @@ Jetzt haben wir erreicht, dass ein Benutzer unser Programm mit seinen Systemrech
 Alternativ wäre der gleiche Angriff auch mit dem /tmp Ordner denkbar (Hierauf haben meistens alle Nutzer eines UNIX systems vollen Zugriff), falls man nur lokalen Zugriff auf das System hat und die $PATH variable anderer Benutzer verändern kann.
  
  # Aufgabe 3
+
+ # 3.1
+
+ ## spylib.c
+
+ ```c
+ #include <stdio.h>
+static void wrap_init(void) __attribute__((constructor));
+static void destruct(void) __attribute__((destructor));
+ 
+ void puts(void) {
+ 	fprintf(stderr,"puts called\n");
+ }
+
+ static void destruct(void) {
+ 	fprintf(stderr,"[*] spyware started.");
+ }
+
+ static void wrap_init(void) {
+ 	fprintf(stderr,"[*] spyware terminated.");
+ }
+
+ ```
+
+ ## 2
+
  
  # Aufgabe 4
 
