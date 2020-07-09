@@ -20,6 +20,14 @@ Flag muss entweder auf RTLD_LAZY oder RTLD_NOW gesetzt sein. Sie entscheiden ob 
 
 (2)
 
+Funktionen einer Shared Library können als Konstruktor definiert werden und werden somit als Init-Funkionen direkt beim Laden der Library ausgeführt. Eine solche Function muss folgenden Header haben: 
+```c
+static void con() __attribute__((constructor)); // header
+void con() {
+    printf("I'm a constructor\n");
+}
+```
+
 (3)
 PLT und GOT sind zusätzlicher Speicher, genutzt vom Compiler und dynamischen Linker.
 PLT bedeutet Procedure Linkage Table und wird benutzt um externe funktionen/prozeduren aufzurufen, deren adresse zum zeitpunkt des linkens unbekannt sind. Es wird also für den dynamischen linker überlassen, der das zur Laufzeit resolven soll. 
@@ -62,7 +70,7 @@ Log Levels:
 
 1	KERN_ALERT	Ein Problem ist aufgetreten, Sofortige Aufmerksamkeit notwendig
 
-2	KERN_CRIT	Kritische Conditiojn
+2	KERN_CRIT	Kritische Condition
 
 3	KERN_ERR	Error Aufgetreten
 
