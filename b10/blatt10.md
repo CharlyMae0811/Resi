@@ -49,24 +49,33 @@ insmod -Fügt ein Modul der Kernel zu. modprobe wird häufiger benutzt, da es me
 
 (3)
 
-(4)printk ist eine C Funktion vom Linux Kernel Interface. Sie druckt Nachrichten zum Kernel Log. Sie akzeptiert ein String Parameter (format sting)
-is a C function from the Linux kernel interface that prints messages to the kernel log. It accepts a string parameter called the format string, which specifies a method for rendering an arbitrary number of varied data type parameter(s) into a string. The string is then printed to the kernel log.
+(4)printk ist eine C Funktion vom Linux Kernel Interface. Sie druckt Nachrichten zum Kernel Log. Sie akzeptiert ein String Parameter (format sting) der dann geprinted wird.
+Sie ähnelt printf und Argumente verhalten sich gleich. Sie wird häufig als debugging tool verwendet. Der Grund für die Existenz von printk ist dass die standard C Library in der Kernel mode nicht vorhanden ist. 
 
-It provides a printf-like abstraction and its parsing of the format string and arguments behave exactly the same way. It acts as a debugging tool for kernel programmers who need this function for logging messages from the kernel. C standard library and its printf function is unavailable in kernel mode, hence the need for printk. printk has an optional prefix string: Loglevel.
-
-Loglevel specifies the type of message being sent to the kernel message log. The syntax with loglevel is:
+Loglevel spezifiziert den Nachrichtentyp. Der Syntax ist dabei:
+```
 printk(KERN_DEBUG "Debug message shown!\n");
-Different Loglevels, along with their numerical values, are shown here:
+```
+Log Levels:
 
-0	KERN_EMERG	Emergency condition, system is probably dead
-1	KERN_ALERT	Some problem has occurred, immediate attention is needed
-2	KERN_CRIT	A critical condition
-3	KERN_ERR	An error has occurred
-4	KERN_WARNING	A warning
-5	KERN_NOTICE	Normal message to take note of
-6	KERN_INFO	Some information
-7	KERN_DEBUG	Debug information related to the program
-Loglevels are defined in <linux/kern_levels.h>. Which log levels are printed is configured in the /proc/sys/kernel/printk sysctl file .
+0	KERN_EMERG	Notfall Condition, System vermutlich tod
+
+1	KERN_ALERT	Ein Problem ist aufgetreten, Sofortige Aufmerksamkeit notwendig
+
+2	KERN_CRIT	Kritische Conditiojn
+
+3	KERN_ERR	Error Aufgetreten
+
+4	KERN_WARNING	Warning
+
+5	KERN_NOTICE	Normale Nachricht
+
+6	KERN_INFO	Information
+
+7	KERN_DEBUG	Debug information 
+
+Loglevels sind in <linux/kern_levels.h> definiert. Welche log levels geprinted werden ist im /proc/sys/kernel/printk sysctl file festgelegt.
+
 (5)
 (6)
 (7)
