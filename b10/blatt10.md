@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-
+Es fehlt: 1.3 unclean, 1.5, 3.3, 3.5, 3.6, 3.7
 # Aufgabe 1
 (1)
 ```
@@ -17,7 +17,9 @@ void *dlopen(const char *filename, int flag);
 ```
 dlopen() lädt die dynamische library die ihm mit dem nullterminierten string filename übergeben wird und returned dessen handle. Falls Filename NULL ist, returned es den handle zum main programm. Ein "/" im Filename wird als Path interpretiert. Sonst wird mittels dynamischer Linker für die library gesucht.
 Flag muss entweder auf RTLD_LAZY oder RTLD_NOW gesetzt sein. Sie entscheiden ob undefinierte Symbole zwingend resolved werden müssen oder nicht. RTLD_LAZY tut dies nur wenn der code diese referenziert. RTLD_NOW tut dies für alle bevor dlopen() zuende ist. 
+
 (2)
+
 (3)
 PLT und GOT sind zusätzlicher Speicher, genutzt vom Compiler und dynamischen Linker.
 PLT bedeutet Procedure Linkage Table und wird benutzt um externe funktionen/prozeduren aufzurufen, deren adresse zum zeitpunkt des linkens unbekannt sind. Es wird also für den dynamischen linker überlassen, der das zur Laufzeit resolven soll. 
