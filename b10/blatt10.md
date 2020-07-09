@@ -86,6 +86,8 @@ Loglevels sind in <linux/kern_levels.h> definiert. Welche log levels geprinted w
 
 (5)
 
+dmesg zeigt einem die Meldungen der geladenen Kerne Module an. Wenn unser Kernel-Modul geladen wird werden die vordefinierten Meldungen ausgegeben. Wenn es entladen wird werden diese Nachrichten nicht mehr angezeigt. Vor dem Laden des neuen Moduls werden die Meldungen der Module gezeigt, die vom Betriebssystem geladen wurden.
+
 (6)
 
 (7)
