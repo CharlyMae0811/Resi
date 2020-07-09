@@ -38,12 +38,19 @@ The next times the function is called, the value has already been calculated, so
 # Aufgabe 3
 
 (1)Kernelmodule sind codefragmente die nach Bedarf in die Kernel ge- und entladen werden können. Die erweitern die Funktionen der Kernel, ohne ein Systemneustart forauszusetzen. Ein Beispiel wäre der device driver, der dem Kernel erlaubt auf Hardware zuzugreifen welches zum System angeschlossen ist. 
+
 lsmod - Zeigt welche Module aktuell geladen sind.
+
 insmod -Fügt ein Modul der Kernel zu. modprobe wird häufiger benutzt, da es mehr abhängigkeiten haben kann. 
+
  rmmod - Entfernt Module aus der Kernel.
+ 
 (2) Programmcode im Ring 0 befindet sich im Kernelmodus. 
+
 (3)
-(4)printk is a C function from the Linux kernel interface that prints messages to the kernel log. It accepts a string parameter called the format string, which specifies a method for rendering an arbitrary number of varied data type parameter(s) into a string. The string is then printed to the kernel log.
+
+(4)printk ist eine C Funktion vom Linux Kernel Interface. Sie druckt Nachrichten zum Kernel Log. Sie akzeptiert ein String Parameter (format sting)
+is a C function from the Linux kernel interface that prints messages to the kernel log. It accepts a string parameter called the format string, which specifies a method for rendering an arbitrary number of varied data type parameter(s) into a string. The string is then printed to the kernel log.
 
 It provides a printf-like abstraction and its parsing of the format string and arguments behave exactly the same way. It acts as a debugging tool for kernel programmers who need this function for logging messages from the kernel. C standard library and its printf function is unavailable in kernel mode, hence the need for printk. printk has an optional prefix string: Loglevel.
 
