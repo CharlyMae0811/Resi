@@ -33,6 +33,7 @@ The first time the function is called, the PLT code uses offsets stored in the G
 stores this pre-calculated value
 jumps there
 The next times the function is called, the value has already been calculated, so it just jumps there directly.
+
 (5)
 
 # Aufgabe 3
@@ -77,7 +78,9 @@ Log Levels:
 Loglevels sind in <linux/kern_levels.h> definiert. Welche log levels geprinted werden ist im /proc/sys/kernel/printk sysctl file festgelegt.
 
 (5)
+
 (6)
+
 (7)
 
 # Aufgabe 4
