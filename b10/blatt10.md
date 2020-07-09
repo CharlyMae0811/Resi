@@ -36,19 +36,9 @@ The next times the function is called, the value has already been calculated, so
 # Aufgabe 3
 
 (1)Kernelmodule sind codefragmente die nach Bedarf in die Kernel ge- und entladen werden können. Die erweitern die Funktionen der Kernel, ohne ein Systemneustart forauszusetzen. Ein Beispiel wäre der device driver, der dem Kernel erlaubt auf Hardware zuzugreifen welches zum System angeschlossen ist. 
-lsmod - Show the status of modules in the Linux Kernel. lsmod is a trivial program which nicely formats the contents of the
-       /proc/modules, showing what kernel modules are currently loaded.
-insmod - Simple program to insert a module into the Linux Kernel. insmod is a trivial program to insert a module into the kernel. Most
-       users will want to use modprobe(8) instead, which is more clever and
-       can handle module dependencies.
-
-       Only the most general of error messages are reported: as the work of
-       trying to link the module is now done inside the kernel, the dmesg
-       usually gives more information about errors.
- rmmod - Simple program to remove a module from the Linux Kernel. rmmod is a trivial program to remove a module (when module unloading
-       support is provided) from the kernel. Most users will want to use
-       modprobe(8) with the -r option instead.
-
+lsmod - Zeigt welche Module aktuell geladen sind.
+insmod -Fügt ein Modul der Kernel zu. modprobe wird häufiger benutzt, da es mehr abhängigkeiten haben kann. 
+ rmmod - Entfernt Module aus der Kernel.
 (2) Programmcode im Ring 0 befindet sich im Kernelmodus. 
 (3)
 (4)printk is a C function from the Linux kernel interface that prints messages to the kernel log. It accepts a string parameter called the format string, which specifies a method for rendering an arbitrary number of varied data type parameter(s) into a string. The string is then printed to the kernel log.
