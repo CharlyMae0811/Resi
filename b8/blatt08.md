@@ -26,13 +26,64 @@ output: pdf_file
     YaraGUI:          ist eine Benutzeroberfläche zum  Malware identifizieren. 
     
     Wireshark:        stellt den Netzwerkverkehr da
-(4)
-(5)
+    
+(4)Regshot sagt, dass XXX Einträge geändert oder hinzugefügt wurden.
+XXX sind Schlüssel.
+XXX sind hinzugefügte Werte.
+XXX sind modifizierte Werte.
+Es werden weitere Programme installiert (Mr. OoPpSs, bpk).
+Es wird ein Windows Loginfenster geöffnet, wo man die Passwort Daten eingeben soll.
+Malicious durchsucht den Explorer-Verlauf.
+
+(5)Registry keys werden geändert und Mr. OoPpSs und bkp werden solange ausgeführt wie der Loginscreen über Test. Die VirtualBox wird erkannt, es werden Screenshots gemacht und gespeichert. Desktop.ini wird erstellt.
+CPU_auslastung wird gesteigert.
 
 # Aufgabe 4
-(3)
-(4)
-(5)
-(6)
+(1) Zur VM zurück kehren aus Aufgabe 2.
+(2) Ausführen von malicious.exe
+(3)Screenshot 1: CMD öffnen, strings2 eingeben, Usage sehen
+Screenshot 2: strings2 malicious.exe: "rinst.exe" wird ausgeführt
+(4)In die Conditions kann man bestimmte Eigenschaften einer Datei schreiben (einsehrbar durch stings2). Durch die Yara-Regel kann man auffällige Strings als Malicious erkennbar machen.
+
+"Malicious Yara Regel":
+Von https://virustotal.github.io/yara/:
+
+rule silent_banker : banker
+{
+    meta:
+        description = "This is just an example"
+        threat_level = 3
+        in_the_wild = true
+
+    strings:
+        $a = {6A 40 68 00 30 00 00 6A 14 8D 91}
+        $b = {8D 4D B0 2B C1 83 C0 27 99 6A 4E 59 F7 F9}
+        $c = "UVODFRYSIHLNWPEJXQZAKCBGMT"
+
+    condition:
+        $a or $b or $c
+}
+
+Umgeschrieben:
+rule malicious:
+{
+    meta:
+        description = "Malicious erkennen"
+        threat_level = 3
+        in_the_wild = true
+
+    strings:
+        $a = "cV/ :f ;v5 , U"
+        $b = "rinst.exe"
+        $c = "GZek"
+
+    condition:
+        $a or $b or $c
+}
+
+In dem condition fragement wird erkennbar, dass also jede Datei die entweder string a, b, oder c (Logisches oder) enthält, als malicious makiert wird.
+(5) Das Ausführen öffnet von "Tweaks.com" das Loginfenster. String2 lässt erkennen, dass 4 weitere Programme gestartet wurden (rinst.exe, bpk.exe, Mr. OoPpSsLogin.exe, inst.exe)
+(6)Replikation, Population, Parasitmus: Nein
+Es handelt sich um Spyware (es werden Daten aufgenommen und an andere Empfänger ohne Einwilligung des Nutzers geschickt)
 
 
