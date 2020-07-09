@@ -8,7 +8,7 @@ author:
 lang: de
 output: pdf_file
 ---
-Es fehlt: 1.3 unclean, 1.5, 3.3, 3.5, 3.6, 3.7
+Es fehlt: 1.2, 1.3 unclean, 1.5, 3.3, 3.5, 3.6, 3.7
 # Aufgabe 1
 (1)
 ```
@@ -24,8 +24,7 @@ Flag muss entweder auf RTLD_LAZY oder RTLD_NOW gesetzt sein. Sie entscheiden ob 
 PLT und GOT sind zusätzlicher Speicher, genutzt vom Compiler und dynamischen Linker.
 PLT bedeutet Procedure Linkage Table und wird benutzt um externe funktionen/prozeduren aufzurufen, deren adresse zum zeitpunkt des linkens unbekannt sind. Es wird also für den dynamischen linker überlassen, der das zur Laufzeit resolven soll. 
 GOT bedeutet Global Offsets Table.
-whenever a global variable of a shared library is accessed by your program load the true address of the variable from the GOT, which the dynamic linker previously set.
-Whenever a function from a shared library is called, the linker makes us jump to an address in the PLT.
+Jedes mal wo eine Globale Varaible einer shared library vom Programm geladen wird, wird die wahre adresse der Varaible von GOT geladen. Der dynamische linker hat diese vorher gesetzt. Wenn eine Funktion von einer shared library gecalled wird, macht der linker einen jump zu einer adresse im PLT.
 
 
 (4)
