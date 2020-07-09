@@ -47,7 +47,8 @@ insmod -Fügt ein Modul der Kernel zu. modprobe wird häufiger benutzt, da es me
  
 (2) Programmcode im Ring 0 befindet sich im Kernelmodus. 
 
-(3)
+(3) modprobe -a lädt alle in der Komandozeile angegebenen Module (alternativ: insmod)  
+modprobe -r entlädt angegebenen Module (alternativ: rmmod)
 
 (4)printk ist eine C Funktion vom Linux Kernel Interface. Sie druckt Nachrichten zum Kernel Log. Sie akzeptiert ein String Parameter (format sting) der dann geprinted wird.
 Sie ähnelt printf und Argumente verhalten sich gleich. Sie wird häufig als debugging tool verwendet. Der Grund für die Existenz von printk ist dass die standard C Library in der Kernel mode nicht vorhanden ist. 
